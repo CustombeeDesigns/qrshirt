@@ -1,0 +1,353 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-right: 50px;
+  padding-left: 50px;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #000000d7;
+  letter-spacing: 0.02rem;
+  background-image: url('background.png'); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(5px);
+  background-blend-mode: overlay; /* Blend the image with the color */
+  
+}
+a{
+  color: #01ca4e;
+  text-decoration: none;
+}
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  transition: opacity 0.2s ease; /* Faster transition */
+
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+header.hidden {
+  opacity: 0;
+}
+
+/* .menue{
+  position:absolute;
+  align-items: center;
+  justify-content: center;
+  
+} */
+
+.menu-css {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  /*position: absolute;*/ /* Position absolutely within the header */
+  left: 50%; /* Move to the horizontal center */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+
+
+.logo {
+  height: 50px;
+  color: rgb(235, 240, 240);
+  margin-right: auto; /* Push the logo to the right */
+  padding-left: 30px;
+}
+
+
+/* Hero Section */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.hero {
+  position: relative;
+  height: 95vh; /* Full viewport height by default */
+  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 1200px) {
+  .hero {
+    height: 80vh; /* Slightly smaller height */
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    height: 70vh; /* Smaller height */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh; /* Even smaller height */
+  }
+
+  body {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height:70vh; /* Smallest height for mobile devices */
+  }
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Hero Content */
+.hero-content {
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.hero h1 {
+  font-size: 3rem; /* Default font size */
+  margin: 0;
+  letter-spacing: 0.2rem;
+}
+
+.hero p {
+  font-size: 1.5rem; /* Default font size */
+  margin: 10px 0 0;
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem; /* Smaller font size */
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.2rem; /* Even smaller font size */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Even smaller font size */
+  }
+}
+
+/* Video Section */
+.video-section {
+  padding: 40px 20px;
+  background: (0, 0, 0, 0.8);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Active Classes for Scroll Effects */
+.hero-content.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.video-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* Instructions Section */
+
+
+.instructions h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Steps Section */
+.steps-section {
+
+  background: rgba(163, 13, 13, 0); /* Semi-transparent black background */
+  text-align: center;
+}
+
+.step {
+  opacity: 0; /* Start invisible for fade-in effect */
+  transform: translateY(20px); /* Start slightly below for fade-in effect */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin-bottom: 50px; /* Space between steps */
+  margin-top: 60px;
+}
+
+.step.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to final position */
+  background-color: #5e5e5e31;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-radius: 1rem;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: black;
+  margin: 0 auto 10px; /* Center the circle and add space below */
+}
+
+.step p {
+  font-size: 1rem;
+  color: white;
+  margin: 0 auto;
+  max-width: 600px; /* Limit paragraph width for better readability */
+}
+
+.icon-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0; /* Space between icons */
+  margin-top: 20px;
+}
+
+
+.icon i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.step h3 {
+  color: #007BFF;
+  margin-top: 0;
+}
+
+.step ul {
+  list-style: none;
+  padding: 0;
+}
+
+.step ul li {
+  margin-bottom: 10px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10;
+  margin: 20px 0;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 1.5rem;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.icon i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(219, 208, 208, 0);
+  color: #fff;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vertical Jiggle Animation */
+@keyframes jiggle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Apply the animation to steps */
+.step.jiggle {
+  animation: jiggle 0.5s ease-in-out;
+}
+
